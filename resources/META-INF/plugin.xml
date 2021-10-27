@@ -1,0 +1,36 @@
+<idea-plugin>
+  <id>liqun.guan.geekplus.StringConvert</id>
+  <name>StringConvert</name>
+  <version>1.0</version>
+  <vendor email="72990493@qq.com" url="none">收拾..</vendor>
+
+  <description><![CDATA[
+      字符串转换工具,小驼峰->小写下划线->大写下划线->小驼峰<br>
+      快捷键 alt+l
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Start!<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+
+    <action id="StringConvert" class="StringConvert" text="StringConvert" description="StringConvert">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt L"/>
+    </action>
+  </actions>
+
+</idea-plugin>
