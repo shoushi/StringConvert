@@ -48,21 +48,25 @@ public class StringConvert extends AnAction {
      * @param str 待宰羊肉
      * @return 现羊肉
      */
-    public String convert(String str) {
+    public static String convert(String str) {
         if (str.contains("_")) {
             if (ReUtil.contains("[a-z]+", str)) {
                 return str.toUpperCase();
             }
             return NamingCase.toCamelCase(str);
         }
+        if(ReUtil.isMatch("[a-z]+",str)){
+            return str.toUpperCase();
+        }
+        if(ReUtil.isMatch("[A-Z]+",str)){
+            return str.toLowerCase();
+        }
         return NamingCase.toUnderlineCase(str);
     }
 
     public static void main(String[] args) {
-        boolean abc_acb = ReUtil.contains("[a-z]+", "abc_Acb");
-        System.out.println(NamingCase.toCamelCase("abc_abc"));
-        System.out.println(NamingCase.toUnderlineCase("abcAbc"));
-        System.out.println(NamingCase.toUnderlineCase("abcAbc").toUpperCase());
+       String s=convert("ASDF");
+       System.out.println(s);
     }
 
 }
